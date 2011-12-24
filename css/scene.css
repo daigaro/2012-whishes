@@ -10,7 +10,6 @@ body {
 }
 
 .cloud {
-	background-color: gray;
 	width: 200px; height: 100px;
 	position: absolute;
 	left: 10px; top: 150px;
