@@ -5,10 +5,10 @@
 		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="js/raphael-min.js"></script>
 		<script type="text/javascript" src="js/jsAnim.js"></script>
+		<script type="text/javascript" src="js/scene.js"></script>
 		<script type="text/javascript">
 			$(function(){
-				var moonPaper = Raphael('moon', 100, 100);
-				moonPaper.circle(50, 50, 50).attr({fill: "yellow", stroke: "yellow"});
+				new Moon('moon', 100);
 				
 				var manager = new jsAnimManager(40);
 				var moonAnim = manager.createAnimObject('moon');
