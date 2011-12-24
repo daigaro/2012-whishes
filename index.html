@@ -9,16 +9,20 @@
 		<script type="text/javascript">
 			$(function(){
 				new Moon('moon');
+				$(".cloud").each(function(index, element){
+					$(element).attr("id", "cloud" + index);
+				});
 				
 				var manager = new jsAnimManager(40);
-				var moonAnim = manager.createAnimObject('moon');
+				var moonAnim = manager.createAnimObject('cloud0');
 				moonAnim.add({property: Prop.left, from: 50, to: 150, duration: 2000});
 			});
 		</script>
 	</head>
 	<body>
 		<div id="scene">
-			<div id="moon"/>
+			<div id="moon"></div>
+			<div class="cloud"></div>
 		</div>
 	</body>
 </html>
