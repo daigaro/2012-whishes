@@ -23,8 +23,8 @@
 				
 				for (index = 0; index < numberOfLayers; index++) {
 					var manager = new jsAnimManager(40);
-					var moonAnim = manager.createAnimObject('layer' + index);
-					moonAnim.add({property: Prop.left, from: 50, to: 150, duration: 2000 / (index + 1)});
+					var anim = manager.createAnimObject('layer' + index);
+					anim.add({property: Prop.left, from: 50, to: 150, duration: 2000 / (index + 1)});
 				}				
 			});
 		</script>
