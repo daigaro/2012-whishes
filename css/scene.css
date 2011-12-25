@@ -9,6 +9,9 @@ body {
 	left: 50px; top: 100px;
 }
 
+.layer {
+	position: absolute;
+}
 .cloud {
 	width: 200px; height: 100px;
 	position: absolute;
