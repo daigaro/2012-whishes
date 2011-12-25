@@ -9,6 +9,10 @@
 		<script type="text/javascript">
 			$(function(){
 				new Moon('moon');
+				$(".weather .layer").each(function(index, element){
+					$(element).attr("id", "layer" + index);
+					$(element).append("<div class='cloud'></div>");
+				});
 				$(".cloud").each(function(index, element){
 					$(element).attr("id", "cloud" + index);
 				});
@@ -24,7 +28,9 @@
 	<body>
 		<div id="scene">
 			<div id="moon"></div>
-			<div class="cloud"></div>
+			<div class="weather">
+				<div class="layer"></div>
+			</div>
 		</div>
 	</body>
 </html>
