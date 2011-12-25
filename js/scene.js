@@ -1,5 +1,5 @@
-var Moon = (function(){
-	return function(elementId){
+(function(){
+	window.Moon = function(elementId){
 		var size = $('#' + elementId).width();
 		Raphael(elementId, size, size)
 			.circle(size/2, size/2, size/2)
