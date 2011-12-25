@@ -8,7 +8,7 @@
 		<script type="text/javascript" src="js/scene.js"></script>
 		<script type="text/javascript">
 			var numberOfLayers = 2;
-			var numberOfCloudsPerLayer = 5;
+			var numberOfCloudsPerLayer = 10;
 			
 			$(function(){
 				new Moon('moon');
@@ -16,7 +16,7 @@
 				$(".cloud").each(function(index, element){
 					var elementId = "cloud" + index;
 					$(element).attr("id", elementId);
-					$(element).css({left: 250 * index});
+					$(element).css({left: Math.random() * screen.width});
 					new Cloud(elementId, 200, 100);
 				});
 				
