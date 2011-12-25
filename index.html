@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="js/jsAnim.js"></script>
 		<script type="text/javascript" src="js/scene.js"></script>
 		<script type="text/javascript">
-			var numberOfLayers = 2;
+			var numberOfLayers = 4;
 			var numberOfCloudsPerLayer = 10;
 			
 			$(function(){
@@ -22,9 +22,10 @@
 				
 				
 				for (index = 0; index < numberOfLayers; index++) {
+					var dt = 10000 * (1 - index / numberOfLayers);
 					var manager = new jsAnimManager(40);
 					var anim = manager.createAnimObject('layer' + index);
-					anim.add({property: Prop.left, from: 0, to: screen.width, duration: 10000 / (index + 1)});
+					anim.add({property: Prop.left, from: 0, to: screen.width, duration: dt});
 				}				
 			});
 		</script>
