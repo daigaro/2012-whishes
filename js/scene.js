@@ -29,9 +29,12 @@
 			}
 		});
 		$(".weather .layer").each(function(index, element){
-			$(element).attr("id", "layer" + index);
+			var layer = $(element)
+			layer.attr("id", "layer" + index);
+			var position = layer.position();
+			layer.css({top: position.top + 10 * index});
 			for (var index = 0; index < numberOfCloudsPerLayer; index++) {
-				$(element).append("<div class='cloud'></div>");
+				layer.append("<div class='cloud'></div>");
 			}
 		});
 	};
