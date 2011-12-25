@@ -9,20 +9,10 @@
 		<script type="text/javascript">
 			var numberOfLayers = 2;
 			var numberOfCloudsPerLayer = 5;
+			
 			$(function(){
 				new Moon('moon');
-				$(".weather").each(function(index, element){
-					var weather = $(element);
-					for (var index = 0; index < numberOfLayers; index++) {
-						weather.append("<div class='layer'></div>");
-					}
-				});
-				$(".weather .layer").each(function(index, element){
-					$(element).attr("id", "layer" + index);
-					for (var index = 0; index < numberOfCloudsPerLayer; index++) {
-						$(element).append("<div class='cloud'></div>");
-					}
-				});
+				prepareWeather(numberOfLayers, numberOfCloudsPerLayer);
 				$(".cloud").each(function(index, element){
 					var elementId = "cloud" + index;
 					$(element).attr("id", elementId);

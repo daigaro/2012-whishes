@@ -16,5 +16,20 @@
 		cloudPaper.circle(x0, y0, r0).attr({fill: "gray", stroke: "gray"});
 		cloudPaper.circle(x2, y2, r2).attr({fill: "gray", stroke: "gray"});
 	};
+
+	window.prepareWeather = function(numberOfLayers, numberOfCloudsPersLayer){
+		$(".weather").each(function(index, element){
+			var weather = $(element);
+			for (var index = 0; index < numberOfLayers; index++) {
+				weather.append("<div class='layer'></div>");
+			}
+		});
+		$(".weather .layer").each(function(index, element){
+			$(element).attr("id", "layer" + index);
+			for (var index = 0; index < numberOfCloudsPerLayer; index++) {
+				$(element).append("<div class='cloud'></div>");
+			}
+		});
+	};
 })();
 
