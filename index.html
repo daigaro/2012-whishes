@@ -7,11 +7,12 @@
 		<script type="text/javascript" src="js/jsAnim.js"></script>
 		<script type="text/javascript" src="js/scene.js"></script>
 		<script type="text/javascript">
+			var numberOfCloudsPerLayer = 5;
 			$(function(){
 				new Moon('moon');
 				$(".weather .layer").each(function(index, element){
 					$(element).attr("id", "layer" + index);
-					for (var index = 0; index < 5; index++) {
+					for (var index = 0; index < numberOfCloudsPerLayer; index++) {
 						$(element).append("<div class='cloud'></div>");
 					}
 				});
