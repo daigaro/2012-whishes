@@ -11,13 +11,17 @@
 				new Moon('moon');
 				$(".weather .layer").each(function(index, element){
 					$(element).attr("id", "layer" + index);
-					$(element).append("<div class='cloud'></div>");
+					for (var index = 0; index < 5; index++) {
+						$(element).append("<div class='cloud'></div>");
+					}
 				});
 				$(".cloud").each(function(index, element){
-					$(element).attr("id", "cloud" + index);
+					var elementId = "cloud" + index;
+					$(element).attr("id", elementId);
+					$(element).css({left: 250 * index});
+					new Cloud(elementId, 200, 100);
 				});
 				
-				new Cloud('cloud0', 200, 100);
 
 				var manager = new jsAnimManager(40);
 				var moonAnim = manager.createAnimObject('layer0');
