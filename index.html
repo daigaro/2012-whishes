@@ -7,9 +7,16 @@
 		<script type="text/javascript" src="js/jsAnim.js"></script>
 		<script type="text/javascript" src="js/scene.js"></script>
 		<script type="text/javascript">
+			var numberOfLayers = 2;
 			var numberOfCloudsPerLayer = 5;
 			$(function(){
 				new Moon('moon');
+				$(".weather").each(function(index, element){
+					var weather = $(element);
+					for (var index = 0; index < numberOfLayers; index++) {
+						weather.append("<div class='layer'></div>");
+					}
+				});
 				$(".weather .layer").each(function(index, element){
 					$(element).attr("id", "layer" + index);
 					for (var index = 0; index < numberOfCloudsPerLayer; index++) {
@@ -34,7 +41,6 @@
 		<div id="scene">
 			<div id="moon"></div>
 			<div class="weather">
-				<div class="layer"></div>
 			</div>
 		</div>
 	</body>
