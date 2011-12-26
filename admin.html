@@ -4,15 +4,40 @@
 		<link rel="stylesheet" type="text/css" href="css/admin.css"/>
 		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.base64.min.js"></script>
+		<script type="text/javascript">
+			var createLink = function(){
+				var stars = $("#stars").val();
+				var layers = $("#layers").val();
+				var clouds = $("#clouds").val();
+				var message = $("#message").val();
+				
+				var parameters = "?s=" + stars;
+				parameters += "&l=" + layers;
+				parameters += "&c=" + clouds;
+				parameters += "&m=" + $.base64.encode(message);
+				
+				return parameters;
+			};
+			
+			var changeLink = function(){
+				$("#link").empty().append(createLink());
+			};
+			
+			$(function(){
+				$("#stars, #layers, #clouds, #message").change(changeLink);
+				changeLink();
+			});
+		</script>
 	</head>
 	<body>
 		<h1>Administration Form</h1>
+		<span id="link"></span>
 		<form>
-			<label for="s">#Stars:</label><input name="s" type="text" value="100"><br/>
-			<label for="l">#Layers:</label><input name="l" type="text" value="4"><br/>
-			<label for="c">#Clouds / Layer:</label><input name="c" type="text" value="5"><br/>
+			<label for="s">#Stars:</label><input name="s" id="stars" type="text" value="100"><br/>
+			<label for="l">#Layers:</label><input name="l" id="layers" type="text" value="4"><br/>
+			<label for="c">#Clouds / Layer:</label><input name="c" id="clouds" type="text" value="5"><br/>
 			<label for="m">message:</label><br/>
-			<textarea name="m" cols="100" rows="40">example</textarea>
+			<textarea name="m" id="message" cols="100" rows="40"></textarea>
 		</form>
 	</body>
 </html>
