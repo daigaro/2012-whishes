@@ -4,9 +4,9 @@ body {
 }
 
 #moon {
-	width: 100px; height: 100px;
+	width: 180px; height: 180px;
 	position: absolute;
-	left: 50px; top: 100px;
+	left: 50px; top: 70px;
 }
 
 .layer {
