@@ -20,13 +20,13 @@
 					new Cloud(elementId, 200, 100);
 				});
 				
-				window.constellation = function(elementId, w, h){
+				window.Constellation = function(elementId, w, h){
 					var constellationPaper = Raphael(elementId, w, h);
 					for (index = 0; index < 100; index++) {
 						constellationPaper.circle(Math.random() * w, Math.random() * h, 1 + 3 * Math.random()).attr({fill: "white", stroke: "white"});
 					}
 				};
-				constellation("constellation", screen.width, screen.height);
+				new Constellation("constellation", screen.width, screen.height);
 				
 				for (index = 0; index < numberOfLayers; index++) {
 					var dt = 10000 * (1 - index / numberOfLayers);
