@@ -22,3 +22,9 @@ body {
 	position: absolute;
 	left: 0px; bottom: 0px;
 }
+
+#house {
+	width: 100px; height: 150px;
+	position: absolute;
+	left: 90px; bottom: 100px;
+}

@@ -71,5 +71,12 @@
 			.attr({fill: "darkgreen", stroke: "darkgreen"});
 	};
 
+	window.House = function(elementId) {
+		var house = $("#" + elementId);
+		var w = house.width(); var h = house.height();;			
+		var paper = Raphael(elementId, w, h);
+		paper.path("M0," + (h-w) + "l0," + w + "l" + w + ",0l0," + -w + "L" + w/2 + ",0Z")
+			.attr({fill : "darkred", stroke: "darkred"});
+	}
 })();
 
