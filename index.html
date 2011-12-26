@@ -15,13 +15,7 @@
 				new Constellation("constellation", screen.width, screen.height, numberOfStars);
 				new Moon('moon');
 				prepareWeather(numberOfLayers, numberOfCloudsPerLayer);
-				$(".cloud").each(function(index, element){
-					var elementId = "cloud" + index;
-					$(element).attr("id", elementId);
-					$(element).css({left: Math.random() * screen.width});
-					new Cloud(elementId, 200, 100);
-				});
-				
+				makeClouds();				
 				
 				for (index = 0; index < numberOfLayers; index++) {
 					var dt = 10000 * (1 - index / numberOfLayers);

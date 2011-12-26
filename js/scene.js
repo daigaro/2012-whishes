@@ -46,5 +46,14 @@
 			}
 		});
 	};
+
+	window.makeClouds = function(){
+		$(".cloud").each(function(index, element){
+			var elementId = "cloud" + index;
+			$(element).attr("id", elementId);
+			$(element).css({left: Math.random() * screen.width});
+			new Cloud(elementId, 200, 100);
+		});
+	};
 })();
 
