@@ -3,6 +3,13 @@
 
 This project will create a webpage extending the best wishes for the year 2012.
 
+Usage
+-----
+
+Use the admin.html page to fill in various parameters. This will create a
+parameterised link to the index.html page
+
+
 Frameworks used
 ---------------
 
