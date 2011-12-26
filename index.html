@@ -12,15 +12,19 @@
 			var numberOfCloudsPerLayer = 5;
 			
 			$(function(){
+				$("#message").hide();
+
 				new Constellation("constellation", screen.width, screen.height, numberOfStars);
 				new Moon('moon');
 				prepareWeather(numberOfLayers, numberOfCloudsPerLayer);
 				makeClouds();				
 				animateClouds(numberOfLayers);
-				
 				new Landscape("landscape", screen.width, 175);
-				
 				new House("house");
+				
+				setTimeout(function(){
+					$("#message").fadeIn(2000);
+				},11000);
 			});
 		</script>
 	</head>
@@ -31,6 +35,9 @@
 			<div class="weather"></div>
 			<div id="landscape"></div>
 			<div id="house"></div>
+			<div id="message">
+				<h1>Lorem Ipsum</h1>
+			</div>
 		</div>
 	</body>
 </html>

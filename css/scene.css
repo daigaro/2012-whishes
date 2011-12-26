@@ -28,3 +28,13 @@ body {
 	position: absolute;
 	left: 90px; bottom: 100px;
 }
+
+#message {
+	width: auto; height: auto;
+	position: absolute;
+	left: 300px; top: 70px; right: 70px; bottom: 70px;
+	background-color: rgba(128, 128, 128, 0.5);
+	padding: 2em;
+	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-size: 150%;
+}
