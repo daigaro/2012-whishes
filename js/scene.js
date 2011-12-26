@@ -74,9 +74,17 @@
 	window.House = function(elementId) {
 		var house = $("#" + elementId);
 		var w = house.width(); var h = house.height();;			
+		var offset = 5;
+		var sep = 4;
+		var size = (w/2 - 2 * offset - sep) / 2;
+		var windowAttr = {fill: "yellow", stroke: "yellow"};
 		var paper = Raphael(elementId, w, h);
 		paper.path("M0," + (h-w) + "l0," + w + "l" + w + ",0l0," + -w + "L" + w/2 + ",0Z")
 			.attr({fill : "darkred", stroke: "darkred"});
+		paper.rect(0,0,size, size).translate(w/2 + offset,0).attr(windowAttr);
+		paper.rect(size + sep,0,size, size).translate(w/2 + offset,0).attr(windowAttr);
+		paper.rect(0,size + sep,size, size).translate(w/2 + offset,0).attr(windowAttr);
+		paper.rect(size + sep,size + sep,size, size).translate(w/2 + offset,0).attr(windowAttr);
 	}
 })();
 
