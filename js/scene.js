@@ -64,5 +64,12 @@
 			anim.add({property: Prop.left, from: 0, to: screen.width, duration: dt});
 		}				
 	};
+
+	window.Landscape = function(elementId, w, h){
+		var paper = Raphael(elementId, w, h);
+		paper.path("M0,0l0," + h + "l" + w + ",0l0," + -h/2 * (1 + Math.random()) + "Z")
+			.attr({fill: "darkgreen", stroke: "darkgreen"});
+	};
+
 })();
 

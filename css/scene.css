@@ -17,3 +17,8 @@ body {
 	width: 200px; height: 100px;
 	position: absolute;
 }
+
+#landscape {
+	position: absolute;
+	left: 0px; bottom: 0px;
+}
