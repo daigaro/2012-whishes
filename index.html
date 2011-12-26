@@ -14,7 +14,7 @@
 			var numberOfStars = parameters.s || 100;
 			var numberOfLayers = parameters.l || 4;
 			var numberOfCloudsPerLayer = parameters.c || 5;
-			var text = "<h1>Lorem Ipsum</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mollis, ante sit amet volutpat dapibus, urna ligula dictum mauris, a ornare urna nibh sed neque.</p>"
+			var text = $.base64.decode(unescape(parameters.m)) || "<h1>Happy 2012!</h1>";
 			
 			$(function(){
 				$("#message").hide().append(text);

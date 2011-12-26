@@ -14,7 +14,7 @@
 				var parameters = "index.html?s=" + stars;
 				parameters += "&l=" + layers;
 				parameters += "&c=" + clouds;
-				parameters += "&m=" + $.base64.encode(message);
+				parameters += "&m=" + escape($.base64.encode(message));
 				
 				return parameters;
 			};
