@@ -9,3 +9,4 @@ Frameworks used
 * [jsAnim](http://jsanim.com/ "Homepage of the jsAnim framework")
 * [Raphael](http://raphaeljs.com/ "Homepage of the Raphael framewok")
 * [jQuery](http://jquery.com "Homepage of the jQuery framework")
+* [jQuery-base64](https://github.com/carlo/jquery-base64 "Github page for jquery-base64")
