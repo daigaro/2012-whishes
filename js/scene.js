@@ -1,4 +1,12 @@
 (function(){
+	window.Constellation = function(elementId, w, h, numberOfStars){
+		var paper = Raphael(elementId, w, h);
+		for (index = 0; index < numberOfStars; index++) {
+			paper.circle(Math.random() * w, Math.random() * h, 1 + 3 * Math.random())
+				.attr({fill: "white", stroke: "white"});
+		}
+	};
+
 	window.Moon = function(elementId){
 		var size = $('#' + elementId).width();
 		Raphael(elementId, size, size)
