@@ -10,21 +10,23 @@
 		<script type="text/javascript" src="js/requestParameters.js"></script>
 		<script type="text/javascript">
 			var parameters = requestParameters();
-			console.log(parameters);
 			var numberOfStars = parameters.s || 100;
 			var numberOfLayers = parameters.l || 4;
 			var numberOfCloudsPerLayer = parameters.c || 5;
 			var text = $.base64.decode(unescape(parameters.m)) || "<h1>Happy 2012!</h1>";
 			
+			var width = screen.width;
+			var height = screen.height;
+			
 			$(function(){
 				$("#message").hide().append(text);
 
-				new Constellation("constellation", screen.width, screen.height, numberOfStars);
+				new Constellation("constellation", width, height, numberOfStars);
 				new Moon('moon');
 				prepareWeather(numberOfLayers, numberOfCloudsPerLayer);
-				makeClouds();				
-				animateClouds(numberOfLayers);
-				new Landscape("landscape", screen.width, 175);
+				makeClouds(width);				
+				animateClouds(numberOfLayers, width);
+				new Landscape("landscape", width, 175);
 				new House("house");
 				
 				setTimeout(function(){

@@ -47,21 +47,21 @@
 		});
 	};
 
-	window.makeClouds = function(){
+	window.makeClouds = function(width){
 		$(".cloud").each(function(index, element){
 			var elementId = "cloud" + index;
 			$(element).attr("id", elementId);
-			$(element).css({left: Math.random() * screen.width});
+			$(element).css({left: Math.random() * width});
 			new Cloud(elementId, 200, 100);
 		});
 	};
 
-	window.animateClouds = function(numberOfLayers){
+	window.animateClouds = function(numberOfLayers, width){
 		for (index = 0; index < numberOfLayers; index++) {
 			var dt = 10000 * (1 - index / numberOfLayers);
 			var manager = new jsAnimManager(40);
 			var anim = manager.createAnimObject('layer' + index);
-			anim.add({property: Prop.left, from: 0, to: screen.width, duration: dt});
+			anim.add({property: Prop.left, from: 0, to: width, duration: dt});
 		}				
 	};
 
